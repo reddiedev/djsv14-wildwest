@@ -1,0 +1,31 @@
+{
+    "name": "v14-template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "deploy": "node src/deploy-commands && node src/index",
+        "start": "node src/index",
+        "migrate": "prisma migrate dev --name init",
+        "studio": "npx prisma studio"
+    },
+    "keywords": [],
+    "author": "reddiedev",
+    "license": "ISC",
+    "dependencies": {
+        "@discordjs/rest": "^1.0.1",
+        "@prisma/client": "^4.3.1",
+        "chalk": "4.1.2",
+        "dayjs": "^1.11.5",
+        "discord-api-types": "^0.36.3",
+        "discord.js": "^14.0.3",
+        "dotenv": "^16.0.1",
+        "rcon": "^1.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.20.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prisma": "^4.3.1"
+    }
+}
