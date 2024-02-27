@@ -6,6 +6,7 @@
     "private": "true",
     "scripts": {
         "deploy": "node src/deploy-commands",
+        "postinstall": "npx prisma generate",
         "start": "node src/index",
         "dev": "node src/deploy-commands && node src/index",
         "push": "npx prisma db push",
