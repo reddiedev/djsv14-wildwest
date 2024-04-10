@@ -1,8 +1,13 @@
 const { PrismaClient } = require(`@prisma/client`);
 const prisma = new PrismaClient();
 const shoplog = require(`../logs/shoplog`);
-const { inlineCode, userMention } = require(`discord.js`);
+const { inlineCode, userMention, Message } = require(`discord.js`);
 const { emojis } = require(`../../../config.json`);
+/**
+ * 
+ * @param {Message} message 
+ * @returns {void}
+ */
 async function processLogout(message) {
     return new Promise(async (resolve, reject) => {
         try {
@@ -39,9 +44,8 @@ async function processLogout(message) {
                 await shoplog({
                     title: `User logged out`,
                     color: `Green`,
-                    description: `${userMention(player.id)} (${inlineCode(playerName)}) has received ${rewards} ${
-                        emojis.coin
-                    } for being online for ${hours} hours and ${minutes} minutes `,
+                    description: `${userMention(player.id)} (${inlineCode(playerName)}) has received ${rewards} ${emojis.coin
+                        } for being online for ${hours} hours and ${minutes} minutes `,
                 });
             }
             resolve();
